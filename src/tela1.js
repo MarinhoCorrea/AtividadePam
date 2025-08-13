@@ -1,19 +1,26 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Dimensions, TextInput, TouchableOpacity,Image } from "react-native";
 const windowWidth = Dimensions.get('window').width;
 
 export default function tela1({ navigation }) {
     return (
         <View style={styles.container}>
-            <image source={require('./assets/casual_dog.png')} style={{ width: 200, height: 200, marginBottom: 20 }} />
+            <Image source={require("../assets/casual_dog.png")}style={styles.imgCachoro}/>
             <Text style={styles.title}>Ótimo Dia</Text>
-            <Text style={styles.title}>Ótimo Dia</Text>
-            
+            <Text style={styles.subtitle}>Como deseja acessar?</Text>
             <TouchableOpacity 
-                style={styles.button}
+                style={styles.botaoComoDeseja}
                 onPress={() => navigation.navigate('TelaSecundaria')}
             >
-                <Text style={styles.buttonText}>Ir para Tela 2</Text>
+                <Image source={require("../assets/Google.png")}style={styles.icon}/>
+                <Text style={styles.textBotoes}>Como deseja acessar?</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+                style={styles.botaoOutros}
+                onPress={() => navigation.navigate('TelaSecundaria')}
+            >
+                <Text style={styles.textBotoes}>Outros métodos</Text>
             </TouchableOpacity>
         </View>
     );
@@ -23,11 +30,53 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#BDBDBD",
+        backgroundColor: "#fefefe",
+    },
+    imgCachoro:{
+        height:250,
+        width:310,
     },
     title: {
-        fontSize: 26,
-        marginBottom: 50,
+        fontSize: 30,
+        marginTop:30,
+        marginBottom: 10,
+        fontWeight:600,
+    },
+    subtitle: {
+        fontSize: 20,
+        fontWeight:500
+    },
+    botaoComoDeseja:{
+        backgroundColor:'#43d38d',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop:70,
+        marginBottom: 20,
+        borderRadius: 5,
+        height: 50,
+        width:340
+    },
+    textBotoes:{
+        fontSize:14,     
+    },
+    botaoOutros:{
+        backgroundColor:'#fefefe',
+        display: 'flex',
+        alignItems: "center",
+        justifyContent: 'center',
+        borderColor:"#43d38d",
+        borderWidth: 1,
+        borderRadius: 5,
+        height: 50,
+        width:340
+    },
+    icon:{
+        width:28,
+        height:30,
+        position: 'absolute',
+        left: 30
     },
     input: {
         height: 40,

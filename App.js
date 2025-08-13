@@ -1,5 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { View, Text, StyleSheet, Dimensions, TextInput, TouchableOpacity } from "react-native";
+
 import tela1 from './src/tela1';
 import tela2 from './src/tela2';
 const Stack = createStackNavigator();
