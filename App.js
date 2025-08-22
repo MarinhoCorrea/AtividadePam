@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Dimensions, TextInput, TouchableOpacity } from 
 
 import tela1 from './src/tela1';
 import tela2 from './src/tela2';
+import tela3 from './src/tela3';
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -15,7 +16,8 @@ export default function App() {
               headerShown: false, // Esconde o cabeçalho padrão
             }}>
             <Stack.Screen name="TelaInicial" component={tela1} />
-            <Stack.Screen name="TelaSecundaria" component={tela2}  />        
+            <Stack.Screen name="TelaSecundaria" component={tela2}  />    
+            <Stack.Screen name="TelaTerciaria" component={tela3} />    
       </Stack.Navigator>
     </NavigationContainer>
   );

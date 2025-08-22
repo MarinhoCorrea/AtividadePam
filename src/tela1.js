@@ -1,22 +1,22 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, TextInput, TouchableOpacity,Image } from "react-native";
+import { View, Text, StyleSheet, Dimensions, TextInput, TouchableOpacity, Image } from "react-native";
 const windowWidth = Dimensions.get('window').width;
 
 export default function tela1({ navigation }) {
     return (
         <View style={styles.container}>
-            <Image source={require("../assets/casual_dog.png")}style={styles.imgCachoro}/>
+            <Image source={require("../assets/casual_dog.png")} style={styles.imgCachoro} />
             <Text style={styles.title}>Ótimo Dia</Text>
             <Text style={styles.subtitle}>Como deseja acessar?</Text>
-            <TouchableOpacity 
+            <TouchableOpacity
                 style={styles.botaoComoDeseja}
                 onPress={() => navigation.navigate('TelaSecundaria')}
             >
-                <Image source={require("../assets/Google.png")}style={styles.icon}/>
+                <Image source={require("../assets/Google.png")} style={styles.icon} />
                 <Text style={styles.textBotoes}>Como deseja acessar?</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity 
+            <TouchableOpacity
                 style={styles.botaoOutros}
                 onPress={() => navigation.navigate('TelaSecundaria')}
             >
@@ -32,49 +32,49 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: "#fefefe",
     },
-    imgCachoro:{
-        height:250,
-        width:310,
+    imgCachoro: {
+        height: 250,
+        width: 310,
     },
     title: {
         fontSize: 30,
-        marginTop:30,
+        marginTop: 30,
         marginBottom: 10,
-        fontWeight:600,
+        fontWeight: 600,
     },
     subtitle: {
         fontSize: 20,
-        fontWeight:500
+        fontWeight: 500
     },
-    botaoComoDeseja:{
-        backgroundColor:'#43d38d',
+    botaoComoDeseja: {
+        backgroundColor: '#43d38d',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop:70,
+        marginTop: 70,
         marginBottom: 20,
         borderRadius: 5,
         height: 50,
-        width:340
+        width: 340
     },
-    textBotoes:{
-        fontSize:14,     
+    textBotoes: {
+        fontSize: 14,
     },
-    botaoOutros:{
-        backgroundColor:'#fefefe',
+    botaoOutros: {
+        backgroundColor: '#fefefe',
         display: 'flex',
         alignItems: "center",
         justifyContent: 'center',
-        borderColor:"#43d38d",
+        borderColor: "#43d38d",
         borderWidth: 1,
         borderRadius: 5,
         height: 50,
-        width:340
+        width: 340
     },
-    icon:{
-        width:28,
-        height:30,
+    icon: {
+        width: 28,
+        height: 30,
         position: 'absolute',
         left: 30
     },

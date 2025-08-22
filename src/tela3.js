@@ -15,8 +15,8 @@ export default function tela2({ navigation }) {
                 >
                     <Text style={styles.backButtonText}>&lt;</Text>
                 </TouchableOpacity>
-                <Text style={styles.title}>Acesse</Text>
-                <Text style={styles.subtitle}>com E-mail e senha</Text>
+                <Text style={styles.title}>Cadastre-se</Text>
+                <Text style={styles.subtitle}>informe seu email e senha</Text>
             </View>
             <View style={styles.container}>
                 <View style={styles.TextInputContainer}>
@@ -25,7 +25,17 @@ export default function tela2({ navigation }) {
                         style={styles.textInput}
                         placeholder="Digite seu E-mail"
                     />
-                    <Text style={styles.subtitle}>Senha</Text>
+                    <Text style={styles.subtitle}>Crie uma senha</Text>
+                    <View style={styles.SenhaContainer}>
+                        <TextInput
+                            style={styles.textInput}
+                            placeholder="Digite sua senha"
+                            keyboardType="number-pad"
+                            secureTextEntry={true}
+                        />
+                        <Image source={require("../assets/olhoSenha.png")} style={styles.iconOlho} />
+                    </View>
+                    <Text style={styles.subtitle}>Repita sua senha</Text>
                     <View style={styles.SenhaContainer}>
                         <TextInput
                             style={styles.textInput}
@@ -36,33 +46,12 @@ export default function tela2({ navigation }) {
                         <Image source={require("../assets/olhoSenha.png")} style={styles.iconOlho} />
                     </View>
                 </View>
-                <View style={styles.CheckEsqueci}>
-                    <View style={styles.CheckTexto}>
-                        <Checkbox
-                            style={styles.Chexo}
-                            value={isChecked}
-                            onValueChange={setIsChecked}
-                            color="#43d38d"
-                        />
-                        <Text >Lembrar senha</Text>
-                    </View>
-                    <Text >Esqueci minha senha</Text>
-                </View>
-                <View style={styles.ContainerButton}>
-                    <TouchableOpacity
-                        style={styles.botaoComoDeseja}
-                        onPress={() => navigation.navigate('TelaSecundaria')}
-                    >
-                        <Text style={{ color: "white" }}>Acessar</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity
-                        style={styles.botaoOutros}
-                        onPress={() => navigation.navigate('TelaTerciaria')}
-                    >
-                        <Text>Cadastrar</Text>
-                    </TouchableOpacity>
-                </View>
+                <TouchableOpacity
+                    style={styles.botaoComoDeseja}
+                    onPress={() => navigation.navigate('TelaSecundaria')}
+                >
+                    <Text style={styles.textBotoes}>Cadastrar</Text>
+                </TouchableOpacity>
                 <View style={styles.TracoContainer}>
                     <View style={styles.Traco} />
                     <Text style={styles.TracoText}>
@@ -141,45 +130,21 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         fontSize: 12,
     },
-    CheckEsqueci: {
-        flexDirection: 'row',
-        marginTop: 15,
-    },
-    Chexo: {
-        borderWidth: 1.5,
-        borderRadius: 5,
-        marginRight: 10
-    },
-    CheckTexto: {
-        flexDirection: 'row',
-        marginRight: windowWidth * 0.2
-    },
 
-    ContainerButton: {
-        marginTop: 30,
-
-        flexDirection: 'row',
-        gap: 20,
-        alignItems: 'center',
-    },
     botaoComoDeseja: {
         backgroundColor: '#43d38d',
+        display: 'flex',
+        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 10,
-        height: 60,
-        width: 165
+        marginTop: 70,
+        marginBottom: 20,
+        borderRadius: 5,
+        height: 50,
+        width: 340
     },
-    botaoOutros: {
-        backgroundColor: '#fefefe',
-        display: 'flex',
-        alignItems: "center",
-        justifyContent: 'center',
-        borderColor: "#43d38d",
-        borderWidth: 2,
-        borderRadius: 10,
-        height: 60,
-        width: 165
+    textBotoes: {
+        color: '#fff',
     },
     TracoContainer: {
         flexDirection: 'row',
